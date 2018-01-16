@@ -1,3 +1,4 @@
+import { PipesModule } from './pipes/pipes.module';
 import { DirectivasModule } from './directivas/directivas.module';
 import { SecondModule } from './second/second.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,7 +6,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { DirectivaComponent } from './directivas/directiva/directiva.component';
+import { ExamplePipeComponent } from './pipes/example-pipe/example-pipe.component';
 
 
 @NgModule({
@@ -14,9 +15,9 @@ import { DirectivaComponent } from './directivas/directiva/directiva.component';
   ],
   imports: [
     BrowserModule,
-    DirectivasModule
+    PipesModule
   ],
   providers: [],
-  bootstrap: [DirectivaComponent]
+  bootstrap: [ExamplePipeComponent]
 })
 export class AppModule { }
