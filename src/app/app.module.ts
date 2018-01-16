@@ -1,13 +1,10 @@
-import { PipesModule } from './pipes/pipes.module';
-import { DirectivasModule } from './directivas/directivas.module';
-import { SecondModule } from './second/second.module';
+import { DataBindingModule } from './data-binding/data-binding.module';
+import { ExampleDataBindingComponent } from './data-binding/example-data-binding/example-data-binding.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { ExamplePipeComponent } from './pipes/example-pipe/example-pipe.component';
-
 
 @NgModule({
   declarations: [
@@ -15,9 +12,9 @@ import { ExamplePipeComponent } from './pipes/example-pipe/example-pipe.componen
   ],
   imports: [
     BrowserModule,
-    PipesModule
+    DataBindingModule
   ],
   providers: [],
-  bootstrap: [ExamplePipeComponent]
+  bootstrap: [ExampleDataBindingComponent]
 })
 export class AppModule { }

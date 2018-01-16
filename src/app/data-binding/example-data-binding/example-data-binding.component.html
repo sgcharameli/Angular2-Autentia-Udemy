@@ -1,0 +1,8 @@
+
+<input type="text" [(ngModel)]="message"> {{message}}
+
+<app-child-data-binding (responseFromChild)="responseFromChild($event)" [messageFromParent]="'Yo soy tu padre'"></app-child-data-binding>
+
+<p>
+    Message From Child: {{messageFromChild}}
+  </p>
