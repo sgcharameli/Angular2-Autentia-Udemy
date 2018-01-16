@@ -6,6 +6,7 @@ import { SecondComponent } from './second/second.component';
   imports: [
     CommonModule
   ],
-  declarations: [SecondComponent]
+  declarations: [SecondComponent],
+  exports: [SecondComponent]
 })
 export class SecondModule { }
