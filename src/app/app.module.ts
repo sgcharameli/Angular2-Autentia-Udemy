@@ -1,9 +1,11 @@
+import { DirectivasModule } from './directivas/directivas.module';
 import { SecondModule } from './second/second.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { DirectivaComponent } from './directivas/directiva/directiva.component';
 
 
 @NgModule({
@@ -12,9 +14,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    SecondModule
+    DirectivasModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [DirectivaComponent]
 })
 export class AppModule { }
