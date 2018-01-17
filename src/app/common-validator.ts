@@ -1,5 +1,4 @@
 import { FormControl } from '@angular/forms';
-import { setTimeout } from 'timers';
 
 export class CommonValidator {
 
