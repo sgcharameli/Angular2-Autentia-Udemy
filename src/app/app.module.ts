@@ -1,31 +1,27 @@
-import { UtilService } from './util.service';
-import { ExampleServiceFake } from './example.service.fake';
+import { DataBindingModule } from './data-binding/data-binding.module';
+import { DirectivasModule } from './directivas/directivas.module';
+import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ExampleService } from './example.service';
-import { DiComponent } from './di/di.component';
 import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
-// the second parameter 'fr' is optional
-registerLocaleData(localeEs, 'es');
+const ROUTES: Routes = [
+  { path: '', redirectTo: 'directivas', pathMatch: 'full' },
+  { path: 'directivas', loadChildren: './directivas/directivas.module#DirectivasModule'},
+  { path: 'databinding', loadChildren: './data-binding/data-binding.module#DataBindingModule'}
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DiComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [
-    UtilService,
-    {provide: ExampleService, useClass: ExampleServiceFake},
-    {provide: LOCALE_ID, deps: [UtilService], useFactory: (util: UtilService) => util.getLanguage()}
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

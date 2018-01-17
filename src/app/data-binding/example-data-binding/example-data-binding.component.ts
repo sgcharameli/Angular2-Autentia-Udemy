@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-example-data-binding',
@@ -9,10 +10,14 @@ export class ExampleDataBindingComponent implements OnInit {
 
   messageFromChild: string;
   message: string;
+  param: string;
+  qparam: string;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.param = this.activatedRoute.snapshot.params['param'];
+    this.qparam = this.activatedRoute.snapshot.queryParams['qp'];
   }
 
   responseFromChild(event) {
