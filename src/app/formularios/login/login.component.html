@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <div>
+    <label for="username">Usuario:</label>
+    <input type="text" id="username" formControlName="username">
+  </div>
+
+  <div *ngIf="form.get('username').dirty && !form.get('username').valid">
+    <p *ngIf="form.get('username').hasError('required')">
+      El username es requerido
+    </p>
+    <p *ngIf="form.get('username').hasError('startWithNumber')">
+      El username no puede empezar por número
+    </p>
+    <p *ngIf="form.get('username').hasError('userTaken')">
+      El username ya está ocupado por otro usuario
+    </p>
+  </div>
+
+  <div>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" formControlName="password">
+  </div>
+
+  <button (click)="send()" [disabled]="!form.valid">Login</button>
+</form>
