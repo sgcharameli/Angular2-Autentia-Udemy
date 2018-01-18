@@ -2,10 +2,18 @@ import { browser, by, element } from 'protractor';
 
 export class AppPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/testing');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  setUsername(username: string) {
+    element(by.id('username')).sendKeys(username);
+  }
+
+  searchClick() {
+    element(by.id('search')).click();
+  }
+
+  getLogin() {
+    return element(by.id('login')).getText();
   }
 }

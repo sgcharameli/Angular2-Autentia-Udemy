@@ -6,11 +6,12 @@ import { registerLocaleData } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 const ROUTES: Routes = [
-  { path: '', redirectTo: 'http', pathMatch: 'full' },
+  { path: '', redirectTo: 'testing', pathMatch: 'full' },
   { path: 'directivas', loadChildren: './directivas/directivas.module#DirectivasModule'},
   { path: 'databinding', loadChildren: './data-binding/data-binding.module#DataBindingModule'},
   { path: 'formularios', loadChildren: './formularios/formularios.module#FormulariosModule'},
-  { path: 'http', loadChildren: './http/http.module#HttpModule'}
+  { path: 'http', loadChildren: './http/http.module#HttpModule'},
+  { path: 'testing', loadChildren: './testing/testing.module#TestingModule'}
 ];
 
 @NgModule({

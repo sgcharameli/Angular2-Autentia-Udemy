@@ -1,3 +1,4 @@
+import { browser } from 'protractor';
 import { AppPage } from './app.po';
 
 describe('curso App', () => {
@@ -7,8 +8,12 @@ describe('curso App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should search sgcharameli', () => {
+    const username = 'sgcharameli';
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    page.setUsername(username);
+    page.searchClick();
+    expect(page.getLogin()).toEqual(username);
+    browser.driver.sleep(5000);
   });
 });

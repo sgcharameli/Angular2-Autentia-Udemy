@@ -1,0 +1,9 @@
+<input type="text" id="username" #username>
+<button id="search" (click)="search(username.value)">Search</button>
+
+<div *ngIf="( user$ | async) as user">
+  <p id="login">{{user.login}}</p>
+  <img [src]="user.avatar_url" width="200"/>
+  <p id="name">{{user.name}}</p>
+  <p id="company">{{user.company}}</p>
+</div>
